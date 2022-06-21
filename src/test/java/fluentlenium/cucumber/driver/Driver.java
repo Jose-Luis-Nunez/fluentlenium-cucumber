@@ -1,12 +1,12 @@
 package fluentlenium.cucumber.driver;
 
-enum Driver {
+public enum Driver {
     CHROME("chrome"),
-    CHROME_HEADLESS("chrome-headless");
+    DEFAULT("chrome-headless");
 
-    private String browser;
+    public String value;
 
-    Driver(String browserName) {
-        this.browser = browserName;
+    Driver(String driver) {
+        this.value = driver;
     }
 }

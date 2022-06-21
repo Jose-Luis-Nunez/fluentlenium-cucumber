@@ -6,7 +6,6 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.fluentlenium.adapter.cucumber.FluentCucumberTest;
 import org.fluentlenium.configuration.FluentConfiguration;
 import org.fluentlenium.core.annotation.Page;
 import fluentlenium.cucumber.pageobject.HomePage;
@@ -14,7 +13,7 @@ import fluentlenium.cucumber.pageobject.HomePage;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @FluentConfiguration(webDriver = "chrome")
-public class HomePageSteps extends FluentCucumberTest {
+public class HomePageSteps extends BaseTest {
 
     @Page
     private HomePage page;
