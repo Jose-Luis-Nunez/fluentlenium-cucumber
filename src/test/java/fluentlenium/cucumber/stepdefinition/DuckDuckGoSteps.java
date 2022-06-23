@@ -8,29 +8,29 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.fluentlenium.configuration.FluentConfiguration;
 import org.fluentlenium.core.annotation.Page;
-import fluentlenium.cucumber.pageobject.HomePage;
+import fluentlenium.cucumber.pageobject.DuckDuckGoPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @FluentConfiguration(webDriver = "chrome")
-public class HomePageSteps extends BaseTest {
+public class DuckDuckGoSteps extends BaseStep {
 
     @Page
-    private HomePage page;
+    private DuckDuckGoPage duckGoPage;
 
     @Given("visit duck duck go")
     public void visitDuckDuckGo() {
         goTo("https://duckduckgo.com");
     }
 
-    @When("^I search (.*)")
+    @When("^I search for String (.*)")
     public void searchFor(String searchString) {
-        page.find(searchString);
+        duckGoPage.enterText(searchString);
     }
 
     @Then("^Title contains (.*)")
     public void titleContains(String expectedString) {
-        assertThat(page.window().title()).contains(expectedString);
+        assertThat(duckGoPage.window().title()).contains(expectedString);
     }
 
     @Before

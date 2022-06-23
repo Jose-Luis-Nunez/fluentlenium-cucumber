@@ -1,17 +1,12 @@
 package fluentlenium.cucumber.stepdefinition;
 
-import fluentlenium.cucumber.driver.Browser;
 import fluentlenium.cucumber.driver.WebDriverFactory;
 import org.fluentlenium.adapter.cucumber.FluentCucumberTest;
 import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
 
-public class BaseTest extends FluentCucumberTest {
-
-    private String requestedDriver() {
-        return getClass().getAnnotation(Browser.class).use.value;
-    }
+public class BaseStep extends FluentCucumberTest {
 
     @Override
     public WebDriver newWebDriver() {

@@ -24,17 +24,12 @@ public class WebDriverFactory {
         return new ChromeDriver(chromeOptions());
     }
 
-    private WebDriver chromeHeadless() {
-        WebDriverManager.chromedriver().setup();
-        return new ChromeDriver(chromeOptions().setHeadless(true));
-    }
-
     private ChromeOptions chromeOptions() {
         return new ChromeOptions()
                 .addArguments("--start-maximized")
                 .addArguments("--incognito")
                 .addArguments("--ignore-certificate-errors")
-                .addArguments("--disable-dev-shm-usage") //https://stackoverflow.com/a/50642913/3885491
+                .addArguments("--disable-dev-shm-usage")
                 .addArguments("--no-sandbox")
                 .addArguments("--silent")
                 .merge(setCapabilities());

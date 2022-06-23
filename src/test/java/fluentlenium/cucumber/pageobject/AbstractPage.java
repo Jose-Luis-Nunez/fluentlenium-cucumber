@@ -13,7 +13,7 @@ public class AbstractPage extends FluentPage {
         webElement.click();
     }
 
-    public void typeTextInElement(FluentWebElement webElement, String text) {
+    public void enterText(FluentWebElement webElement, String text) {
         waitUntilElementPresent(webElement);
         webElement.clear();
         webElement.write(text);

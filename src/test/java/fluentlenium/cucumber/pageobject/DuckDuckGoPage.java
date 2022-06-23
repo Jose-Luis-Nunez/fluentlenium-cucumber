@@ -5,7 +5,7 @@ import org.fluentlenium.core.domain.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 @PageUrl("https://duckduckgo.com")
-public class HomePage extends AbstractPage {
+public class DuckDuckGoPage extends AbstractPage {
 
     @FindBy(css = "#search_form_input_homepage")
     private FluentWebElement searchInput;
@@ -13,8 +13,8 @@ public class HomePage extends AbstractPage {
     @FindBy(css = "#search_button_homepage")
     private FluentWebElement searchButton;
 
-    public void find(String text) {
-        typeTextInElement(searchInput, text);
+    public void enterText(String text) {
+        enterText(searchInput, text);
         searchButton.submit();
     }
 }
